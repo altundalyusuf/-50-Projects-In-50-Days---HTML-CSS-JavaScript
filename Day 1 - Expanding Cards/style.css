@@ -1,0 +1,74 @@
+/* This line imports 'Multi' text font as our default font */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* Margin and padding spaces are combined with the content */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    /* Changes text font */
+    font-family: "Muli", sans-serif;
+    /* Changes body's display property yo flexbox */
+    display: flex;
+    /* Aligns items to center of the page horizontal */
+    align-items: center;
+    /* Aligns items to center of the page vertical */
+    justify-content: center;
+    /* This line provide us to use 100% of the page  */
+    height: 100vh;
+    /* Hids overflows */
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.panel{
+    /* This lines styles panel class elements. Backgorunds, size, positions, repeat, height, radius, color exc. */
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    /* Makes cursor to hover mode when we get on element */
+    cursor: pointer;
+    /* Makes passive elements small on the page */
+    flex: 0.5;
+    margin: 10px;
+    /* In order to make texts absolute, we made panel class relative */
+    position: relative;
+    /* When we click on a different image, there will be a transition with this attributes */
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 5;
+}
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+/* This media tag is for screens are smaller than 480px */
+@media(max-width: 480px){
+    .container{
+        width: 100vh;
+    }
+
+    .panel:nth-of-type(4), .panel:nth-of-type(5){
+        display: none;
+    }
+}
